@@ -7574,7 +7574,7 @@ end
                 BorderMode = Enum.BorderMode.Inset;
                 Size = UDim2.new(1, 0, 0, 507 + 2);
                 ZIndex = 2;
-                Parent = Info.Side == 1 and LeftSide or RightSide;
+                Parent = Info.Side == 1 and LeftSide or MiddleSide or RightSide;
             })
 
             Library:AddToRegistry(BoxOuter, {
@@ -7660,8 +7660,12 @@ end
             return Tab:AddGroupbox({ Side = 1; Name = Name; })
         end
 
-        function Tab:AddRightGroupbox(Name)
+        function Tab:AddMiddleGroupbox(Name)
             return Tab:AddGroupbox({ Side = 2; Name = Name; })
+        end
+
+		function Tab:AddRightGroupbox(Name)
+            return Tab:AddGroupbox({ Side = 3; Name = Name; })
         end
 
         function Tab:AddTabbox(Info)
