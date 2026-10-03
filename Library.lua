@@ -7503,13 +7503,13 @@ do
                 end
             else
                 LeftSide.Position = UDim2.new(0, 7, 0, 7)
-                LeftSide.Size = UDim2.new(0.5, -10, 1, -14)
+                LeftSide.Size = UDim2.new(0.33, -10, 1, -14)
 
 				MiddleSide.Position = UDim2.new(0.34, 5, 0, 7)
 				MiddleSide.Size = UDim2.new(0.33, -10, 1, -14)
 
-                RightSide.Position = UDim2.new(0.5, 5, 0, 7)
-                RightSide.Size = UDim2.new(0.5, -10, 1, -14)
+                RightSide.Position = UDim2.new(0.67, 5, 0, 7)
+                RightSide.Size = UDim2.new(0.33, -10, 1, -14)
             end
         end
 
