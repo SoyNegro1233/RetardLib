@@ -7364,7 +7364,7 @@ do
             BackgroundTransparency = 1;
             BorderSizePixel = 0;
             Position = UDim2.new(0, 7, 0, 7);
-            Size = UDim2.new(0.25, -10, 1, -14));
+            Size = UDim2.new(0.25, -10, 1, -14);
             CanvasSize = UDim2.new(0, 0, 0, 0);
             BottomImage = "";
             TopImage = "";
