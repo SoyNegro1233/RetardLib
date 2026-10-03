@@ -7400,6 +7400,7 @@ do
         })
 
         Tab.LeftSideFrame = LeftSide
+		Tab.MiddleSideFrame = MiddleSide
         Tab.RightSideFrame = RightSide
 
         Library:Create("UIListLayout", {
