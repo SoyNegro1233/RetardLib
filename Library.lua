@@ -7376,8 +7376,8 @@ do
 		local MiddleSide = Library:Create("ScrollingFrame", {
     		BackgroundTransparency = 1,
     		BorderSizePixel = 0,
-    		Position = UDim2.new(0.34, 5, 0, 7),
-    		Size = UDim2.new(0.33, -10, 1, -14),
+    		Position = UDim2.new(0.25, 5, 0, 7),
+    		Size = UDim2.new(0.25, -10, 1, -14),
     		CanvasSize = UDim2.new(0, 0, 0, 0),
     		BottomImage = "",
     		TopImage = "",
