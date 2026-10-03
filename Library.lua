@@ -7373,6 +7373,19 @@ do
             Parent = TabFrame;
         })
 
+		local MiddleSide = Library:Create("ScrollingFrame", {
+    		BackgroundTransparency = 1,
+    		BorderSizePixel = 0,
+    		Position = UDim2.new(0.34, 5, 0, 7),
+    		Size = UDim2.new(0.33, -10, 1, -14),
+    		CanvasSize = UDim2.new(0, 0, 0, 0),
+    		BottomImage = "",
+    		TopImage = "",
+    		ScrollBarThickness = 0,
+    		ZIndex = 2,
+    		Parent = TabFrame,
+		})
+
         local RightSide = Library:Create("ScrollingFrame", {
             BackgroundTransparency = 1;
             BorderSizePixel = 0;
@@ -7396,6 +7409,14 @@ do
             HorizontalAlignment = Enum.HorizontalAlignment.Center;
             Parent = LeftSide;
         })
+
+		Library:Create("UIListLayout", {
+    		Padding = UDim.new(0, 8),
+   			FillDirection = Enum.FillDirection.Vertical,
+    		SortOrder = Enum.SortOrder.LayoutOrder,
+    		HorizontalAlignment = Enum.HorizontalAlignment.Center,
+    		Parent = MiddleSide,
+		})
 
         Library:Create("UIListLayout", {
             Padding = UDim.new(0, 8);
@@ -7436,7 +7457,7 @@ do
             end)
         end
 
-        for _, Side in next, { LeftSide, RightSide } do
+        for _, Side in next, { LeftSide, MiddleSide, RightSide } do
             Side:WaitForChild("UIListLayout"):GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
                 Side.CanvasSize = UDim2.fromOffset(0, Side.UIListLayout.AbsoluteContentSize.Y)
             end)
@@ -7463,15 +7484,21 @@ do
                 if TopBar.Position.Y.Offset > 0 then
                     LeftSide.Position = UDim2.new(0, 7, 0, 7 + Size)
                     LeftSide.Size = UDim2.new(0.5, -10, 1, -14 - Size)
+
+					MiddleSide.Position = UDim2.new(0.34, 5, 0, 7 + Size)
+					MiddleSide.Size = UDim2.new(0.33, -10, 1, -14 - Size)
             
-                    RightSide.Position = UDim2.new(0.5, 5, 0, 7 + Size)
-                    RightSide.Size = UDim2.new(0.5, -10, 1, -14 - Size)
+                    RightSide.Position = UDim2.new(0.67, 5, 0, 7 + Size)
+                    RightSide.Size = UDim2.new(0.33, -10, 1, -14 - Size)
                 else
                     LeftSide.Position = UDim2.new(0, 7, 0, 7)
                     LeftSide.Size = UDim2.new(0.5, -10, 1, -14 - Size)
+
+					MiddleSide.Position = UDim2.new(0.34, 5, 0, 7)
+					MiddleSide.Size = UDim2.new(0.33, -10, 1, -14 - Size)
             
-                    RightSide.Position = UDim2.new(0.5, 5, 0, 7)
-                    RightSide.Size = UDim2.new(0.5, -10, 1, -14 - Size)
+                    RightSide.Position = UDim2.new(0.67, 5, 0, 7)
+                    RightSide.Size = UDim2.new(0.33, -10, 1, -14 - Size)
                 end
             else
                 LeftSide.Position = UDim2.new(0, 7, 0, 7)
@@ -7546,7 +7573,7 @@ end
         end
 
         function Tab:GetSides()
-            return { ["Left"] = LeftSide, ["Right"] = RightSide }
+            return { ["Left"] = LeftSide, ["Middle"] = MiddleSide, ["Right"] = RightSide }
         end
 
         function Tab:SetName(Name)
@@ -7574,7 +7601,7 @@ end
                 BorderMode = Enum.BorderMode.Inset;
                 Size = UDim2.new(1, 0, 0, 507 + 2);
                 ZIndex = 2;
-                Parent = Info.Side == 1 and LeftSide or MiddleSide or RightSide;
+                Parent = Info.Side == 1 and LeftSide or (Info.Side == 2 and RightSide or MiddleSide);
             })
 
             Library:AddToRegistry(BoxOuter, {
