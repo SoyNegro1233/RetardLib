@@ -7698,11 +7698,11 @@ end
         end
 
         function Tab:AddMiddleGroupbox(Name)
-            return Tab:AddGroupbox({ Side = 2; Name = Name; })
+            return Tab:AddGroupbox({ Side = 3; Name = Name; })
         end
 
 		function Tab:AddRightGroupbox(Name)
-            return Tab:AddGroupbox({ Side = 3; Name = Name; })
+            return Tab:AddGroupbox({ Side = 2; Name = Name; })
         end
 
         function Tab:AddTabbox(Info)
