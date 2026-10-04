@@ -7435,6 +7435,7 @@ do
         if Library.IsMobile then
             local SidesValues = {
                 ["Left"] = tick(),
+				["Middle"] = tick(),
                 ["Right"] = tick(),
             }
 
