@@ -7284,8 +7284,9 @@ do
                 BackgroundColor3 = Library.BackgroundColor;
                 BorderColor3 = Color3.fromRGB(248, 51, 51);
                 BorderMode = Enum.BorderMode.Inset;
-                Position = UDim2.new(0, 7, 0, 7);
-                Size = UDim2.new(1, -13, 0, 0);
+				AnchorPoint = Vector2.new(0.5, 0);
+                Position = UDim2.new(0.5, 0, 0, 7);
+                Size = UDim2.new(1, -45, 0, 0);
                 ZIndex = 2;
                 Parent = TabFrame;
                 Visible = false;
