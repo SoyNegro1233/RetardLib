@@ -7268,8 +7268,9 @@ function Library:CreateWindow(...)
         local TabFrame = Library:Create("Frame", {
             Name = "TabFrame",
             BackgroundTransparency = 1;
+			AnchorPoint = Vector2.new(0.5, 0);
             Position = UDim2.new(0, 0, 0, 0);
-            Size = UDim2.new(1, 0, 1, 0);
+            Size = UDim2.new(1.03, 0, 1, 0);
             Visible = false;
             ZIndex = 2;
             Parent = TabContainer;
@@ -7363,8 +7364,9 @@ do
         local LeftSide = Library:Create("ScrollingFrame", {
             BackgroundTransparency = 1;
             BorderSizePixel = 0;
-            Position = UDim2.new(0, 7, 0, 7);
-            Size = UDim2.new(0.25, -10, 1, -14);
+			AnchorPoint = Vector2.new(0.5, 0);
+            Position = UDim2.new(0.18, 0, 0, 7);
+            Size = UDim2.new(0.325, -10, 1,	 -14);
             CanvasSize = UDim2.new(0, 0, 0, 0);
             BottomImage = "";
             TopImage = "";
@@ -7376,8 +7378,9 @@ do
 		local MiddleSide = Library:Create("ScrollingFrame", {
     		BackgroundTransparency = 1,
     		BorderSizePixel = 0,
-    		Position = UDim2.new(0.25, 5, 0, 7),
-    		Size = UDim2.new(0.25, -10, 1, -14),
+			AnchorPoint = Vector2.new(0.5, 0),
+    		Position = UDim2.new(0.5, 0, 0, 7),
+    		Size = UDim2.new(0.325, -10, 1, -14),
     		CanvasSize = UDim2.new(0, 0, 0, 0),
     		BottomImage = "",
     		TopImage = "",
@@ -7389,8 +7392,9 @@ do
         local RightSide = Library:Create("ScrollingFrame", {
             BackgroundTransparency = 1;
             BorderSizePixel = 0;
-            Position = UDim2.new(0.75, 5, 0, 7);
-            Size = UDim2.new(0.25, -10, 1, -14);
+			AnchorPoint = Vector2.new(0.5, 0);
+            Position = UDim2.new(0.82, 0, 0, 7);
+            Size = UDim2.new(0.325, -10, 1, -14);
             CanvasSize = UDim2.new(0, 0, 0, 0);
             BottomImage = "";
             TopImage = "";
@@ -7483,33 +7487,33 @@ do
                 Size = Size + 10
                 
                 if TopBar.Position.Y.Offset > 0 then
-                    LeftSide.Position = UDim2.new(0, 7, 0, 7 + Size)
-                    LeftSide.Size = UDim2.new(0.5, -10, 1, -14 - Size)
+                    LeftSide.Position = UDim2.new(0.18, 0, 0, 7 + Size)
+                    LeftSide.Size = UDim2.new(0.325, -10, 1, -14 - Size)
 
-					MiddleSide.Position = UDim2.new(0.34, 5, 0, 7 + Size)
-					MiddleSide.Size = UDim2.new(0.33, -10, 1, -14 - Size)
+					MiddleSide.Position = UDim2.new(0.5, 0, 0, 7 + Size)
+					MiddleSide.Size = UDim2.new(0.325, -10, 1, -14 - Size)
             
-                    RightSide.Position = UDim2.new(0.67, 5, 0, 7 + Size)
-                    RightSide.Size = UDim2.new(0.33, -10, 1, -14 - Size)
+                    RightSide.Position = UDim2.new(0.82, 0, 0, 7 + Size)
+                    RightSide.Size = UDim2.new(0.325, -10, 1, -14 - Size)
                 else
-                    LeftSide.Position = UDim2.new(0, 7, 0, 7)
-                    LeftSide.Size = UDim2.new(0.5, -10, 1, -14 - Size)
+                    LeftSide.Position = UDim2.new(0.18, 0, 0, 7)
+                    LeftSide.Size = UDim2.new(0.325, -10, 1, -14 - Size)
 
-					MiddleSide.Position = UDim2.new(0.34, 5, 0, 7)
-					MiddleSide.Size = UDim2.new(0.33, -10, 1, -14 - Size)
+					MiddleSide.Position = UDim2.new(0.5, 0, 0, 7)
+					MiddleSide.Size = UDim2.new(0.325, -10, 1, -14 - Size)
             
-                    RightSide.Position = UDim2.new(0.67, 5, 0, 7)
-                    RightSide.Size = UDim2.new(0.33, -10, 1, -14 - Size)
+                    RightSide.Position = UDim2.new(0.82, 0, 0, 7)
+                    RightSide.Size = UDim2.new(0.325, -10, 1, -14 - Size)
                 end
             else
-                LeftSide.Position = UDim2.new(0, 7, 0, 7)
-                LeftSide.Size = UDim2.new(0.33, -10, 1, -14)
+                LeftSide.Position = UDim2.new(0.18, 0, 0, 7)
+                LeftSide.Size = UDim2.new(0.325, -10, 1, -14)
 
-				MiddleSide.Position = UDim2.new(0.34, 5, 0, 7)
-				MiddleSide.Size = UDim2.new(0.33, -10, 1, -14)
+				MiddleSide.Position = UDim2.new(0.5, 0, 0, 7)
+				MiddleSide.Size = UDim2.new(0.325, -10, 1, -14)
 
-                RightSide.Position = UDim2.new(0.67, 5, 0, 7)
-                RightSide.Size = UDim2.new(0.33, -10, 1, -14)
+                RightSide.Position = UDim2.new(0.82, 0, 0, 7)
+                RightSide.Size = UDim2.new(0.325, -10, 1, -14)
             end
         end
 
